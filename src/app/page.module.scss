@@ -1,0 +1,248 @@
+@import "./variables.module.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $cyan-bg;
+  align-items: center;
+  width: 100%;
+}
+
+.imgContainer {
+  width: 100%;
+  background-color: $dark-cyan;
+  margin-bottom: 80px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  margin-bottom: 120px;
+  position: relative;
+}
+
+.filterBox {
+  position: absolute;
+  top: -130px;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 30px 30px;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    gap: 20px;
+  }
+
+  p {
+    background-color: $cyan-filter;
+    margin: 0;
+    color: $dark-cyan;
+    padding: 5px 0px 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      &::after {
+        content: "x";
+        background-color: $very-dark-grayish-cyan;
+        font-size: 30px;
+        color: white;
+        padding: 5px 10px 8px 10px;
+        margin-left: 10px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+      }
+    }
+
+    &::after {
+      content: "x";
+      background-color: $dark-cyan;
+      font-size: 30px;
+      color: white;
+      padding: 5px 10px 8px 10px;
+      margin-left: 10px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+    }
+  }
+
+  button {
+    border: none;
+    background: transparent;
+    color: $dark-grayish-cyan;
+    cursor: pointer;
+    font-weight: $title;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: $dark-cyan;
+    }
+  }
+}
+
+.jobContainer {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 30px 30px;
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      margin: 0;
+    }
+
+    .inlineCompany {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      span {
+        margin: 0;
+        padding: 8px;
+        padding-bottom: 5px;
+        color: white;
+        border-radius: 15px;
+        display: flex;
+      }
+    }
+
+    .infoTitle {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    h2 {
+      color: $dark-cyan;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      color: $very-dark-grayish-cyan;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: $dark-cyan;
+      }
+    }
+
+    .info {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-weight: $text;
+      color: $dark-grayish-cyan;
+      margin-top: -10px;
+
+      p {
+        margin: 0;
+      }
+
+      p:last-of-type::after {
+        content: "";
+      }
+
+      p::after {
+        content: ".";
+        font-size: 30px;
+        position: relative;
+        left: 14px;
+        top: -3px;
+      }
+    }
+  }
+
+  .filter {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+
+    p {
+      background-color: $cyan-filter;
+      color: $dark-cyan;
+      padding: 10px;
+      padding-top: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      margin: 0;
+
+      &:hover {
+        color: white;
+        background-color: $dark-cyan;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .list {
+    width: 80%;
+    gap: 50px;
+  }
+
+  .imgContainer {
+    margin-bottom: 100px;
+  }
+
+  .filterBox {
+    top: -150px;
+    position: relative;
+    margin-bottom: -140px;
+
+    div {
+      flex-wrap: wrap;
+    }
+  }
+
+  .jobContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    position: relative;
+  }
+
+  .content {
+    padding-top: 20px;
+
+    img {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: -25px;
+    }
+  }
+
+  .filter {
+    flex-wrap: wrap;
+    border-top: 1px solid rgb(221, 221, 221);
+    width: 100%;
+    padding-top: 25px;
+  }
+}
